@@ -12,6 +12,7 @@
 
 #include <stdlib.h>
 #include <check.h>
+#include <stdio.h>
 
 #include "geometry.h"
 
@@ -19,9 +20,10 @@
 
 START_TEST(something2)
 {
-coord_2d_t a, b, c;
-a.x= 0; a.y = 0; b.x=0; b.y=0; c.x=0; c.y=0;
-ck_assert(coord_2d_area_triangle(&a, &b, &c) == 0);
+	coord_2d_t a, b, c;
+	a.x= 1; a.y = 0; b.x=0; b.y=0; c.x=0; c.y=1;
+	ck_assert(coord_2d_area_triangle(&a, &b, &c) == 0.5);
+	//printf("something here %f\n", y);
 }
 END_TEST
 START_TEST(test_2d_eq)
